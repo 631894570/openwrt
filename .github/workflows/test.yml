@@ -33,13 +33,10 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: 检查
-      uses: actions/checkout@main
-
 
     - name: 创建release
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$("lean" +date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::$('lean' +date +"%Y.%m.%d-%H%M")"
         echo "::set-output name=status::success"
