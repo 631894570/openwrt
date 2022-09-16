@@ -12,6 +12,7 @@
 name: Lienol OpenWrt
 
 on:
+  workflow_dispatch:
   
   schedule:
     - cron: 0 5 1,15 * *
