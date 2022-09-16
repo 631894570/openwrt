@@ -27,7 +27,6 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  TAG: Lean
 
 jobs:
   build:
@@ -39,5 +38,5 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$($TAG +date +"%Y.%m.%d-%H%M")"
+        echo "::set-output name=release_tag::Lean_$(date +"%Y.%m.%d-%H%M")"
         echo "::set-output name=status::success"
