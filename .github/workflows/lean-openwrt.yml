@@ -135,7 +135,7 @@ jobs:
         tag: ${{ env.tag_name }}
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: "${{ env.FIRMWARE }}/*
+        artifacts: ${{ env.FIRMWARE }}/*
 
     - name: 清除Autobuild
       uses: GitRML/delete-workflow-runs@main
