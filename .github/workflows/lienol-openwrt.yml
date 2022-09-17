@@ -149,7 +149,7 @@ jobs:
       with:
         name: Lienol_${{ env.DATE }} 
         allowUpdates: true
-        tag: ${{ env.tag_name }}
+        tag: lienol_${{ env.tag_name }}
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
