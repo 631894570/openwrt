@@ -29,6 +29,7 @@ env:
   DIY_P2_SH: lienol-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
+  CACHE_BUILD: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -62,6 +63,15 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
+        
+        
+    - name: 缓存加速
+      uses: klever1988/cachewrtbuild@main
+      if: env.CACHE_BUILD == 'true'
+      with:
+        ccache: 'true'
+        prefix: ${{ github.workspace }}/openwrt
+
 
     - name: 加载feed
       run: |
