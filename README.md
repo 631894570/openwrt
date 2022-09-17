@@ -12,16 +12,16 @@
 ![GitHub Stars](https://img.shields.io/github/stars/Lienol/openwrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/Lienol/openwrt.svg?style=flat-square&label=Forks&logo=github)
 ## Config
-IP: 192.168.10.10
-User: root
-password: (none)
-default theme： argon-mod argon
-[download link]([https://p3terx.com](https://github.com/631894570/openwrt/releases))
+IP: 192.168.10.10\
+User: root\
+password: (none)\
+default theme： argon-mod argon\
+[download link]([https://p3terx.com](https://github.com/631894570/openwrt/releases))\
 
-感谢P3TERX的项目源码
-感谢lean和lienol的付出
+感谢P3TERX的项目源码\
+感谢lean和lienol的付出\
 ## License
 
-[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
+[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)\
 
 OpenWrt is licensed under GPL-2.0
