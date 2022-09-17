@@ -16,7 +16,7 @@ IP: 192.168.10.10\
 User: root\
 password: (none)\
 default theme： argon-mod argon\
-[**Download link**]([https://p3terx.com](https://github.com/631894570/openwrt/releases)
+[**Download link**](https://github.com/631894570/openwrt/releases)
 
 感谢P3TERX的项目源码\
 感谢lean和lienol的付出
