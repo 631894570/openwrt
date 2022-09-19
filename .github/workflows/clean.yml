@@ -1,11 +1,11 @@
-name: Lienol OpenWrt
+name: 清除release workflow
 
 on:
   workflow_dispatch:
   jobs:
 
-build:
-    runs-on: ubuntu-20.04
+    del_runs:
+    runs-on: ubuntu-latest
     
     steps:
     - name: 删除workflow
