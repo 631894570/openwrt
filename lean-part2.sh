@@ -14,6 +14,9 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/pac
 rm -rf openwrt/package/feeds/luci/applications/luci-app-argon-config
 git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/feeds/luci/applications/luci-app-argon-config
 
+#修改TTYD自动登录
+sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
+
 #替换banner
 rm -rf openwrt/package/base-files/files/etc/banner
 cp banner openwrt/package/base-files/files/etc/banner
