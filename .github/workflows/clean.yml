@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 删除workflow
-        uses: ActionsRML/delete-workflow-runs@main
+        uses: GitRML/delete-workflow-runs@main
         with:
           retain_days: 1
           keep_minimum_runs: 0
