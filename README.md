@@ -15,7 +15,8 @@
 IP: 192.168.10.10\
 User: root\
 password: (none)\
-default theme： argon-mod argon\
+default theme： jerrykuku/luci-theme-argon
+
 [**Download link**](https://github.com/631894570/openwrt/releases)
 
 感谢P3TERX的项目源码\
