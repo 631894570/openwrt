@@ -12,7 +12,7 @@
 ![GitHub Stars](https://img.shields.io/github/stars/Lienol/openwrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/Lienol/openwrt.svg?style=flat-square&label=Forks&logo=github)
 ## Config
-IP: 192.168.10.10\
+IP: 192.168.10.1\
 User: root\
 password: (none)\
 default theme： jerrykuku/luci-theme-argon
