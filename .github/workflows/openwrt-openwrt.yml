@@ -79,20 +79,19 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: 更新feed
-      run: cd openwrt && openwrt/scripts/feeds update -a
+      run: ./scripts/feeds update -a
 
     - name: 安装feed
-      run: cd openwrt && openwrt/scripts/feeds install -a
+      run: ./scripts/feeds install -a
 
     - name: 加载自定义配置
       run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE ./.config
         chmod +x $DIY_P2_SH
         $GITHUB_WORKSPACE/$DIY_P2_SH
     - name: 下载程序包
       id: package
       run: |
-        cd openwrt
         make defconfig
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
@@ -100,7 +99,6 @@ jobs:
     - name: 生成固件
       id: compile
       run: |
-        cd openwrt
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
         echo "::set-output name=status::success"
