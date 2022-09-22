@@ -137,9 +137,9 @@ jobs:
     - name: 上传release
       uses: ncipollo/release-action@v1
       with:
-        name: Lean_${{ env.DATE }} 
+        name: Openwrt_${{ env.DATE }} 
         allowUpdates: true
-        tag: lean_${{ env.tag_name }}
+        tag: Openwrt_${{ env.tag_name }}
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
