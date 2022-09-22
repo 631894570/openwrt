@@ -29,7 +29,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  CACHE_BUILD: true
+  CACHE_BUILD: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -64,12 +64,12 @@ jobs:
         echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
         
         
-#    - name: 缓存加速
-#      uses: klever1988/cachewrtbuild@main
-#      if: env.CACHE_BUILD == 'true'
-#      with:
-#        ccache: 'true'
-#        prefix: ${{ github.workspace }}/openwrt
+    - name: 缓存加速
+      uses: klever1988/cachewrtbuild@main
+      if: env.CACHE_BUILD == 'true'
+      with:
+        ccache: 'true'
+        prefix: ${{ github.workspace }}/openwrt
 
 
     - name: 加载feed
