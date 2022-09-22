@@ -23,9 +23,9 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: lean/lean.config
-  DIY_P1_SH: lean/lean-part1.sh
-  DIY_P2_SH: lean/lean-part2.sh
+  CONFIG_FILE: lean/config
+  DIY_P1_SH: lean/part1.sh
+  DIY_P2_SH: lean/part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -47,7 +47,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL raw.githubusercontent.com/631894570/openwrt/main/lean-list)
+        sudo -E apt-get -qq install $(curl -fsSL raw.githubusercontent.com/631894570/openwrt/main/list)
         sudo -E apt-get -qq purge azure-cli ghc* zulu* hhvm llvm* firefox powershell openjdk* dotnet* google* mysql* php* android*
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
