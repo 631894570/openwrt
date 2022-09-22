@@ -23,6 +23,9 @@ cp banner openwrt/package/base-files/files/etc/banner
 #修改TTYD自动登录
 #sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
 
+#修改默认语言
+sed -i 's/option lang auto/option lang zh_Hans/g' openwrt/feeds/luci/modules/luci-base/root/etc/config/luci
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/config_generate
 
