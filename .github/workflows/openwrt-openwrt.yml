@@ -79,10 +79,10 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: 更新feed
-      run: cd openwrt && ./scripts/feeds update -a
+      run: cd openwrt && openwrt/scripts/feeds update -a
 
     - name: 安装feed
-      run: cd openwrt && ./scripts/feeds install -a
+      run: cd openwrt && openwrt/scripts/feeds install -a
 
     - name: 加载自定义配置
       run: |
