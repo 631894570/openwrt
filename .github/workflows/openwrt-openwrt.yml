@@ -74,15 +74,15 @@ jobs:
 
     - name: 加载feed
       run: |
+        cd /workdir
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
-        cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: 更新feed
-      run: ./scripts/feeds update -a
+      run: cd /workdir/openwrt && ./scripts/feeds update -a
 
     - name: 安装feed
-      run: ./scripts/feeds install -a
+      run: cd /workdir/openwrt && ./scripts/feeds install -a
 
     - name: 加载自定义配置
       run: |
