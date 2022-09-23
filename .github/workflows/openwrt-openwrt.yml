@@ -21,7 +21,7 @@ on:
     
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: master
+  REPO_BRANCH: openwrt-22.03
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: openwrt/config
   DIY_P1_SH: openwrt/part1.sh
@@ -34,7 +34,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-lastest
 
 
     steps:
