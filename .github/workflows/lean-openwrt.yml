@@ -79,20 +79,21 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: 更新feed
-      run: cd openwrt && ./scripts/feeds update -a
+      run: cd /workdir/openwrt && ./scripts/feeds update -a
 
     - name: 安装feed
-      run: cd openwrt && ./scripts/feeds install -a
+      run: cd /workdir/openwrt && ./scripts/feeds install -a
 
     - name: 加载自定义配置
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
+        cd /workdir
         $GITHUB_WORKSPACE/$DIY_P2_SH
     - name: 下载程序包
       id: package
       run: |
-        cd openwrt
+        cd /workdir/openwrt
         make defconfig
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
@@ -122,7 +123,7 @@ jobs:
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
-        cd openwrt/bin/targets/*/*
+        cd /workdir/openwrt/bin/targets/*/*
         rm -rf packages
         rm -rf *.buildinfo
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
