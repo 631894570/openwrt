@@ -34,7 +34,6 @@ env:
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,7 +41,7 @@ jobs:
     steps:
     - name: 检查
       uses: actions/checkout@master
-
+      
     - name: 初始化环境
       env:
         DEBIAN_FRONTEND: noninteractive
