@@ -95,7 +95,6 @@ jobs:
     - name: 下载程序包
       working-directory: ./openwrt
       run: |
-        cd /workdir/openwrt
         make defconfig
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
