@@ -17,8 +17,8 @@ rm -rf openwrt/package/feeds/luci/applications/luci-app-argon-config
 git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/feeds/luci/applications/luci-app-argon-config
 
 #替换banner
-rm -rf openwrt/package/base-files/files/etc/banner
-cp banner openwrt/package/base-files/files/etc/banner
+#rm -rf openwrt/package/base-files/files/etc/banner
+#cp banner openwrt/package/base-files/files/etc/banner
 
 #修改TTYD自动登录
 sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
