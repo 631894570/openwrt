@@ -10,15 +10,18 @@
 
 name: Lean
 
-on:
+on: 
+  release:
+    types: [published]
+
   workflow_dispatch:
-  
+
   schedule:
     - cron: 0 5 1,15 * *
   
   watch:
     types: [started]
-    
+
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
@@ -29,23 +32,22 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  CACHE_BUILD: false
   TZ: Asia/Shanghai
+
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
-
+    runs-on: ubuntu-latest
 
     steps:
     - name: 检查
-      uses: actions/checkout@main
-      
+      uses: actions/checkout@master
+
     - name: 初始化环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+          sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
         sudo -E apt-get -qq install $(curl -fsSL raw.githubusercontent.com/631894570/openwrt/main/list)
         sudo -E apt-get -qq purge azure-cli ghc* zulu* hhvm llvm* firefox powershell openjdk* dotnet* google* mysql* php* android*
@@ -54,34 +56,19 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+
     - name: 拉取源码
-      working-directory: /workdir
       run: |
-        df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
         
-        
-    - name: 缓存加速
-      uses: klever1988/cachewrtbuild@main
-      if: env.CACHE_BUILD == 'true'
-      with:
-        ccache: 'true'
-        prefix: ${{ github.workspace }}/openwrt
-
-
-    - name: 加载feed
+    - name: 加载、更新、安装feeds
+      working-directory: /workdir
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
-        
-    - name: 更新、安装feed
-      working-directory: ./openwrt
-      run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
@@ -89,27 +76,25 @@ jobs:
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+        cd openwrt && make defconfig
         
     - name: 下载程序包
       working-directory: ./openwrt
       run: |
-        make defconfig
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        
+
     - name: 生成固件
       working-directory: ./openwrt
       run: |
-        echo -e "$(($(nproc)+1)) thread compile"
-        make -j$(($(nproc)+1)) || make -j1 V=s
+        echo -e "$(nproc) thread build."
+        make -j$(nproc) V=s
         echo "::set-output name=status::success"
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
-        
+
     - name: 检查空间使用情况
       if: (!cancelled())
       run: df -hT
