@@ -18,8 +18,8 @@ git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/fee
 sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
 
 #替换banner
-rm -rf openwrt/package/base-files/files/etc/banner
-cp /banner openwrt/package/base-files/files/etc/banner
+#rm -rf openwrt/package/base-files/files/etc/banner
+#cp /banner openwrt/package/base-files/files/etc/banner
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/config_generate
