@@ -64,7 +64,6 @@ jobs:
         echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
         
     - name: 加载、更新、安装feeds
-      working-directory: /workdir
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
