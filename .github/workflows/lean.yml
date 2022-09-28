@@ -68,14 +68,18 @@ jobs:
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
     - name: 加载自定义配置
+      working-directory: /workdir
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./customize.sh && ./customize.sh
-        cd openwrt && make defconfig
+        chmod +x $DIY_P2_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P2_SH
+        make defconfig
         
     - name: 下载程序包
       working-directory: ./openwrt
