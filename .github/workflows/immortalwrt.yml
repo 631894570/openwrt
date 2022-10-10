@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: openwrt
+name: immortalwrt
 
 on:
   repository_dispatch:
@@ -25,11 +25,12 @@ on:
 
 
 env:
-  REPO_URL: https://git.openwrt.org/openwrt/openwrt.git
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: openwrt/config
-  DIY_P1_SH: openwrt/part1.sh
-  DIY_P2_SH: openwrt/part2.sh
+  CONFIG_FILE: immortalwrt/config
+  DIY_P1_SH: immortalwrt/part1.sh
+  DIY_P2_SH: immortalwrt/part2.sh
   BANNER: banner
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -61,7 +62,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL openwrt
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
@@ -142,9 +143,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: OpenWRT_${{ env.DATE }} 
+        name: immortalwrt_${{ env.DATE }} 
         allowUpdates: true
-        tag: OpenWRT_${{ env.tag_name }}
+        tag: immortalwrt_${{ env.tag_name }}
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
