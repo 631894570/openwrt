@@ -84,8 +84,8 @@ jobs:
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE /workdir/openwrt/.config
         chmod +x $DIY_P2_SH
-        rm -rf /workdir/openwrt/package/base-files/files/etc/banner
-        [ -e $BANNER ] && mv $BANNER /workdir/openwrt/package/base-files/files/etc/banner
+        rm -rf /workdir/openwrt/package/emortal/default-settings/files/openwrt_banner
+        [ -e $BANNER ] && mv $BANNER /workdir/openwrt/package/emortal/default-settings/files/openwrt_banner
         cd /workdir
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
