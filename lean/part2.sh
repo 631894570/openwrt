@@ -11,8 +11,8 @@
 #
 #安装argon主题、argon config
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/package/feeds/luci/luci-theme-argon-18.06
-rm -rf openwrt/package/feeds/luci/applications/luci-app-argon-config
-git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/feeds/luci/applications/luci-app-argon-config
+#rm -rf openwrt/package/feeds/luci/applications/luci-app-argon-config
+#git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/feeds/luci/applications/luci-app-argon-config
 
 #修改TTYD自动登录
 sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
