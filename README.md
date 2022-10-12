@@ -11,16 +11,20 @@
 ## [Lienol/openwrt](https://github.com/Lienol/openwrt)
 ![GitHub Stars](https://img.shields.io/github/stars/Lienol/openwrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/Lienol/openwrt.svg?style=flat-square&label=Forks&logo=github)
+## [Lienol/openwrt](https://github.com/Lienol/openwrt)
+![GitHub Stars](https://img.shields.io/github/stars/immortalwrt/immortalwrt.svg?style=flat-square&label=Stars&logo=github)
+![GitHub Forks](https://img.shields.io/github/forks/immortalwrt/immortalwrt.svg?style=flat-square&label=Forks&logo=github)
+
 ## Config
 IP: 192.168.10.1\
 User: root\
 password: (none)\
 default theme： jerrykuku/luci-theme-argon
-
+LuCI: Docker iStore udpxy igmpproxy OpenClash PrinterShare ttyd argon-config netdata
 [**Download link**](https://github.com/631894570/openwrt/releases)
 
 感谢P3TERX的项目源码\
-感谢lean和lienol的付出
+感谢lean、lienol、immortalwrt、kenzo8
 ## License
 
 [MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
