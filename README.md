@@ -11,7 +11,7 @@
 ## [Lienol/openwrt](https://github.com/Lienol/openwrt)
 ![GitHub Stars](https://img.shields.io/github/stars/Lienol/openwrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/Lienol/openwrt.svg?style=flat-square&label=Forks&logo=github)
-## [Lienol/openwrt](https://github.com/Lienol/openwrt)
+## [immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt)
 ![GitHub Stars](https://img.shields.io/github/stars/immortalwrt/immortalwrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/immortalwrt/immortalwrt.svg?style=flat-square&label=Forks&logo=github)
 
