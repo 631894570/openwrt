@@ -31,4 +31,4 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 #rm openwrt/package/lean/luci-theme-argon -rf
 
 #4.默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' openwrt/feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-neobird/g' openwrt/feeds/luci/collections/luci/Makefile
