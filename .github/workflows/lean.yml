@@ -162,6 +162,6 @@ jobs:
       with:
         keep_latest: 1
         delete_tags: true
-        delete_tag_pattern: lean
+        delete_tag_pattern: Lean
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
