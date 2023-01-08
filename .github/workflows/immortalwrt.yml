@@ -157,10 +157,11 @@ jobs:
         keep_minimum_runs: 0
 
     - name: Remove old Releases
-      uses: danshui-git/delete-older-releases@main
+      uses: dev-drprasad/delete-older-releases@v0.2.1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 4
+        keep_latest: 1
         delete_tags: true
+        delete_tag_pattern: immortalwrt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
