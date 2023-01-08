@@ -13,17 +13,8 @@ name: immortalwrt
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 5 1,15 * *
-  watch:
-    types: [started]
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
 
-
+env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
