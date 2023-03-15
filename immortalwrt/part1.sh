@@ -20,6 +20,7 @@
 # Add kenzo feed source
 #sed -i '$a src-git-full kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 #sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+sed -i '$a src-git small8 https://github.com/kenzok8/small-package
 
 # 软件中心istore
 #svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
