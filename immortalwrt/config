@@ -278,3 +278,6 @@ CONFIG_boost-compile-visibility-hidden=y
 CONFIG_boost-runtime-shared=y
 CONFIG_boost-static-and-shared-libs=y
 CONFIG_boost-variant-release=y
+CONFIG_PACKAGE_aliyundrive-webdav=y
+CONFIG_PACKAGE_luci-app-aliyundrive-webdav=y
+CONFIG_PACKAGE_luci-i18n-aliyundrive-webdav-zh-cn=y
