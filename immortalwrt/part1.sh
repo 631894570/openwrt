@@ -21,11 +21,6 @@
 #sed -i '$a src-git-full kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 #sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 
-# aliyundrive-webdav
-cd package
-git clone --depth 1 https://github.com/messense/aliyundrive-webdav aliyundrive && mv -n aliyundrive/openwrt/* ./ ; rm -rf aliyundrive
-cd ..
-
 # 软件中心istore
 #svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
 svn co https://github.com/linkease/istore/trunk/luci package/istore
