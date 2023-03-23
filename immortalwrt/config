@@ -278,3 +278,6 @@ CONFIG_boost-compile-visibility-hidden=y
 CONFIG_boost-runtime-shared=y
 CONFIG_boost-static-and-shared-libs=y
 CONFIG_boost-variant-release=y
+CONFIG_PACKAGE_luci-theme-design=y
+CONFIG_PACKAGE_luci-i18n-design-config-zh-cn=y
+CONFIG_PACKAGE_luci-app-design-config=y
