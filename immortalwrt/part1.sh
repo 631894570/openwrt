@@ -23,7 +23,7 @@
 
 
 sed -i '$a theme-design https://github.com/gngpp/luci-theme-design' feeds.conf.default
-sed -i '$a theme-design https://github.com/gngpp/luci-app-design-config' feeds.conf.default
+sed -i '$a design-config https://github.com/gngpp/luci-app-design-config' feeds.conf.default
 
 # 软件中心istore
 #svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
