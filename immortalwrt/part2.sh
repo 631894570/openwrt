@@ -15,6 +15,10 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/package/feed
 #rm -rf openwrt/package/feeds/luci/applications/luci-app-argon-config
 #git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/feeds/luci/applications/luci-app-argon-config
 
+#安装design主题、design config
+git clone https://github.com/gngpp/luci-theme-design.git openwrt/package/feeds/luci/luci-theme-design
+git clone https://github.com/gngpp/luci-app-design-config.git openwrt/package/feeds/luci/luci-app-design-config
+
 #修改TTYD自动登录
 sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
 
