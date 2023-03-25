@@ -10,8 +10,8 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 #安装argon主题、argon config
-rm -rf openwrt/package/feeds/luci/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/package/feeds/luci/luci-theme-argon
+#rm -rf openwrt/package/feeds/luci/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-theme-argon.git openwrt/package/feeds/luci/luci-theme-argon
 #rm -rf openwrt/package/feeds/luci/applications/luci-app-argon-config
 #git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/feeds/luci/applications/luci-app-argon-config
 
