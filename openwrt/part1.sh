@@ -1,5 +1,5 @@
 #添加kenzok8/small-package库
-sed -i '$a small8 https://github.com/kenzok8/small-package' feeds.conf.default
+sed -i '$a src-git small8 https://github.com/kenzok8/small-package' feeds.conf.default
 
 
 #添加iStoreOS
