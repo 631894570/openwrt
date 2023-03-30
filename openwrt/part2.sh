@@ -40,4 +40,4 @@ sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/confi
 
 
 #修改默认语言
-sed -i 's/auto/zh_Hans/g' openwrt/feeds/luci/modules/luci-base/root/etc/config/luci
+sed -i 's/auto/zh_cn/g' openwrt/feeds/luci/modules/luci-base/root/etc/config/luci
