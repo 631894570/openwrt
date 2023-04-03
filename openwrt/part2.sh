@@ -20,7 +20,7 @@
 #git clone https://github.com/gngpp/luci-app-design-config.git openwrt/package/feeds/luci/luci-app-design-config
 
 #修改TTYD自动登录
-#sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
+sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
 
 #替换banner
 #rm -rf openwrt/package/base-files/files/etc/banner
@@ -36,7 +36,7 @@ sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/confi
 #rm openwrt/package/lean/luci-theme-argon -rf
 
 #4.默认主题
-#sed -i 's/luci-theme-bootstrap/luci-theme-design/g' openwrt/feeds/luci/collections/luci-light/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
 
 
 #修改默认语言
