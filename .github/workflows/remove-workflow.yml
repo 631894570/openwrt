@@ -14,13 +14,11 @@ on:
   repository_dispatch:
   workflow_dispatch:
 
-
-
 jobs:
   build:
-     runs-on: ubuntu-latest
-     name: remove-workflow
-     steps:
+    runs-on: ubuntu-20.04
+
+    steps:
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
       with:
