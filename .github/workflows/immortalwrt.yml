@@ -150,14 +150,12 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
 
-    - name: Delete releases and workflows runs
-      uses: ophub/delete-releases-workflows@main
+    - name: Remove old Releases
+      uses: dev-drprasad/delete-older-releases@v0.2.1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        delete_releases: true
-        releases_keep_latest: 4
-        releases_keep_keyword: immortalwrt/openwrt/Lienol/Lean
+        keep_latest: 1
         delete_tags: true
-        delete_workflows: true
-        workflows_keep_day: 1
-        gh_token: ${{ secrets.GH_TOKEN }}
+        delete_tag_pattern: immortalwrt
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
