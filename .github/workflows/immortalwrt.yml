@@ -149,19 +149,15 @@ jobs:
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE }}/*
-        
-    - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@v2
-      with:
-        retain_days: 1
-        keep_minimum_runs: 0
 
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.2.1
+    - name: Delete releases and workflows runs
+      uses: ophub/delete-releases-workflows@main
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 1
+        delete_releases: true
+        releases_keep_latest: 4
+        releases_keep_keyword: immortalwrt/openwrt/Lienol/Lean
         delete_tags: true
-        delete_tag_pattern: immortalwrt
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        delete_workflows: true
+        workflows_keep_day: 1
+        gh_token: ${{ secrets.GH_TOKEN }}
