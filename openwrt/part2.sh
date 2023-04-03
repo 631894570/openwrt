@@ -43,7 +43,3 @@ sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/confi
 sed -i 's/auto/zh_cn/g' openwrt/feeds/luci/modules/luci-base/root/etc/config/luci
 
 
-#更换upx包
-rm -rf openwrt/feeds/small8/upx/Makefile
-wget https://raw.githubusercontent.com/immortalwrt/packages/master/utils/upx/Makefile -P openwrt/feeds/small8/upx/
-wget https://raw.githubusercontent.com/immortalwrt/packages/master/utils/upx/test.sh -P openwrt/feeds/small8/upx/
