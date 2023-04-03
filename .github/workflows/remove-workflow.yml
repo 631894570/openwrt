@@ -22,8 +22,8 @@ jobs:
     - name: Delete releases and workflows runs
       uses: ophub/delete-releases-workflows@main
       with:
-        del_releases: false
-        del_workflows: true
+        delete_releases: false
+        delete_workflows: true
         workflows_keep_day: 0
         gh_token: ${{ secrets.GH_TOKEN }}
        
