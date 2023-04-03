@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@v2
+    - name: Delete releases and workflows runs
+      uses: ophub/delete-releases-workflows@main
       with:
-        token: ${{ github.token }}
-        repository: ${{ github.repository }}
-        retain_days: 1
-        keep_minimum_runs: 0
-        delete_workflow_pattern: 'all'
+        del_releases: false
+        del_workflows: true
+        workflows_keep_day: 0
+        gh_token: ${{ secrets.GH_TOKEN }}
+       
