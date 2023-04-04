@@ -42,4 +42,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 #修改默认语言
 sed -i 's/auto/zh_cn/g' openwrt/feeds/luci/modules/luci-base/root/etc/config/luci
 
-
+#更换dockerman
+rm -rf openwrt/feeds/luci/applications/luci-app-dockerman
+svn export https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman openwrt/feeds/luci/applications/luci-app-dockerman
