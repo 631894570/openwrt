@@ -14,7 +14,9 @@
 ## [immortalwrt/immortalwrt](https://github.com/immortalwrt/immortalwrt)
 ![GitHub Stars](https://img.shields.io/github/stars/immortalwrt/immortalwrt.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/immortalwrt/immortalwrt.svg?style=flat-square&label=Forks&logo=github)
-
+## [openwrt/openwrt](https://github.com/openwrt/openwrt)
+![GitHub Stars](https://img.shields.io/github/stars/openwrt/openwrt.svg?style=flat-square&label=Stars&logo=github)
+![GitHub Forks](https://img.shields.io/github/forks/openwrt/openwrt.svg?style=flat-square&label=Forks&logo=github)
 ## Config
 IP: 192.168.10.1\
 User: root\
