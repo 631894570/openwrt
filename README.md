@@ -22,7 +22,7 @@ IP: 192.168.10.1\
 User: root\
 password: (none)\
 default theme： jerrykuku/luci-theme-argon\
-LuCI: Docker iStore udpxy igmpproxy OpenClash PrinterShare ttyd argon-config netdata\
+LuCI: Docker iStore udpxy omcproxy OpenClash ttyd argon-config netdata\
 [**Download link**](https://github.com/631894570/openwrt/releases)
 
 感谢P3TERX的项目源码\
