@@ -10,9 +10,14 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 #安装argon主题、argon config
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/package/feeds/luci/luci-theme-argon-18.06
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git openwrt/package/feeds/luci/luci-theme-argon-18.06
 #rm -rf openwrt/package/feeds/luci/applications/luci-app-argon-config
 #git clone https://github.com/jerrykuku/luci-app-argon-config openwrt/package/feeds/luci/applications/luci-app-argon-config
+
+#安装design主题、design config
+git clone -b main https://github.com/gngpp/luci-theme-design openwrt/package/feeds/luci/luci-theme-design
+git clone https://github.com/gngpp/luci-app-design-config openwrt/package/feeds/luci/applications/luci-app-design-config
+
 
 #修改TTYD自动登录
 sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.config
@@ -31,4 +36,4 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 #rm openwrt/package/lean/luci-theme-argon -rf
 
 #4.默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' openwrt/feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-design/g' openwrt/feeds/luci/collections/luci/Makefile
