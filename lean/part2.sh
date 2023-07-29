@@ -39,5 +39,5 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 sed -i 's/luci-theme-bootstrap/luci-theme-design/g' openwrt/feeds/luci/collections/luci/Makefile
 
 #alist编译需要
-#rm -rf openwrt/feeds/packages/lang/golang
-#svn export https://github.com/sbwml/packages_lang_golang/branches/19.x openwrt/feeds/packages/lang/golang
+rm -rf openwrt/feeds/packages/lang/golang
+svn export https://github.com/sbwml/packages_lang_golang/branches/20.x openwrt/feeds/packages/lang/golang
