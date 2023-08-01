@@ -66,12 +66,6 @@ jobs:
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
         
-    - name: Cache
-      uses: stupidloud/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        prefix: ${{ github.workspace }}/openwrt
-        
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF /workdir/openwrt/feeds.conf.default
