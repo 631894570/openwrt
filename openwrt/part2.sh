@@ -24,7 +24,7 @@ sed -i 's/login/login -f root/g' openwrt/feeds/packages/utils/ttyd/files/ttyd.co
 
 #替换banner
 rm -rf openwrt/package/base-files/files/etc/banner
-cp /banner openwrt/package/base-files/files/etc/banner
+cp banner openwrt/package/base-files/files/etc/banner
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/config_generate
