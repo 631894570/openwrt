@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: lean
+name: immortal_r3b
 
 on:
   repository_dispatch:
