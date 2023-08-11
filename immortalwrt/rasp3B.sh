@@ -29,4 +29,5 @@ sed -i 's/auto/zh_cn/g' openwrt/feeds/luci/modules/luci-base/root/etc/config/luc
 
 #替换banner
 rm -rf openwrt/package/emortal/default-settings/files/openwrt_banner
-cp /banner openwrt/package/emortal/default-settings/files/openwrt_banner
+wget https://raw.githubusercontent.com/631894570/openwrt/main/banner
+mv banner openwrt/package/emortal/default-settings/files/openwrt_banner
