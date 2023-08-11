@@ -40,4 +40,5 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 
 #替换banner
 rm -rf openwrt/package/emortal/default-settings/files/openwrt_banner
-cp /banner openwrt/package/emortal/default-settings/files/openwrt_banner
+wget https://raw.githubusercontent.com/631894570/openwrt/main/banner
+mv banner openwrt/package/emortal/default-settings/files/openwrt_banner
