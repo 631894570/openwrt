@@ -31,7 +31,6 @@ env:
   CONFIG_FILE: lean/config
   DIY_P1_SH: lean/part1.sh
   DIY_P2_SH: lean/part2.sh
-  BANNER: banner
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
