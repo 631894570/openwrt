@@ -26,3 +26,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collection
 
 #修改默认语言
 sed -i 's/auto/zh_cn/g' openwrt/feeds/luci/modules/luci-base/root/etc/config/luci
+
+#替换banner
+rm -rf openwrt/package/emortal/default-settings/files/openwrt_banner
+cp /banner openwrt/package/emortal/default-settings/files/openwrt_banner
