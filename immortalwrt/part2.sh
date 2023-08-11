@@ -37,3 +37,7 @@ sed -i 's/192.168.1.1/192.168.10.1/g' openwrt/package/base-files/files/bin/confi
 
 #4.默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' openwrt/feeds/luci/collections/luci-light/Makefile
+
+#替换banner
+rm -rf openwrt/package/emortal/default-settings/files/openwrt_banner
+cp /banner openwrt/package/emortal/default-settings/files/openwrt_banner
