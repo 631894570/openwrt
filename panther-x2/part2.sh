@@ -25,9 +25,5 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 #4.默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-design/g' openwrt/feeds/luci/collections/luci/Makefile
 
-#alist编译需要
-rm -rf openwrt/feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 20.x openwrt/feeds/packages/lang/golang
-
 #配置向导
 git clone https://github.com/sirpdboy/luci-app-netwizard openwrt/package/luci-app-netwizard
