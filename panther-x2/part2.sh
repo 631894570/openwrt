@@ -30,4 +30,4 @@ rm -rf openwrt/feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 20.x openwrt/feeds/packages/lang/golang
 
 #配置向导
-git clone https://github.com/sirpdboy/luci-app-netwizard openwrt/feeds/luci/applications/
+git clone https://github.com/sirpdboy/luci-app-netwizard openwrt/package/luci-app-netwizard
