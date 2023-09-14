@@ -16,7 +16,7 @@ orig_version=$(cat "package/lean/default-settings/files/zzz-default-settings" | 
 sed -i "s/${orig_version}/R${date_version} by Haiibo/g" package/lean/default-settings/files/zzz-default-settings
 
 # 修复 hostapd 报错
-cp -f $GITHUB_WORKSPACE/scripts/011-fix-mbo-modules-build.patch package/network/services/hostapd/patches/011-fix-mbo-modules-build.patch
+cp -f $GITHUB_WORKSPACE/panther-x2/011-fix-mbo-modules-build.patch package/network/services/hostapd/patches/011-fix-mbo-modules-build.patch
 
 
 #修改TTYD自动登录
@@ -38,7 +38,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci/
 #开启netdata sensors
 sed -i 's/charts.d = no/charts.d = yes/g' feeds/packages/admin/netdata/files/netdata.conf
 rm -rf feeds/packages/admin/netdata/patches/001-disable-plugins-by-default.patch
-wget https://raw.githubusercontent.com/631894570/Panther_X2/main/001-disable-plugins-by-default.patch -O feeds/packages/admin/netdata/patches/001-disable-plugins-by-default.patch
+cp -f $GITHUB_WORKSPACE/panther-x2/001-disable-plugins-by-default.patch feeds/packages/admin/netdata/patches/001-disable-plugins-by-default.patch
 
 
 ./scripts/feeds update -a
