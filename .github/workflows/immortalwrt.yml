@@ -119,7 +119,7 @@ jobs:
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE /workdir/openwrt/.config
         chmod +x $DIY_P2_SH
-        cd /workdir
+        cd /workdir/openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: 加载.config
