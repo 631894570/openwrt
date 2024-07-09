@@ -21,3 +21,5 @@ sed -i 's/192.168.1.1/192.168.10.10/g' package/base-files/files/bin/config_gener
 #默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 #sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci/Makefile
+
+rm -rf feeds/luci/applications/luci-app-homeproxy
