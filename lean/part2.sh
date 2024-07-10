@@ -13,7 +13,7 @@
 sed -i 's/login/login -f root/g' feeds/packages/utils/ttyd/files/ttyd.config
 #替换banner
 rm -rf package/base-files/files/etc/banner
-wget https://raw.githubusercontent.com/631894570/small-package/main/.github/diy/pikachu_banner -O package/base-files/files/etc/banner
+wget https://raw.githubusercontent.com/631894570/small-package/main/.github/diy/banner -O package/base-files/files/etc/banner
 sed -i 's/2020-01-01/'`date +%Y-%m-%d`'/g' package/base-files/files/etc/banner
 #cp /mnt/f/openwrt_build/banner package/base-files/files/etc/banner
 #修改默认IP
