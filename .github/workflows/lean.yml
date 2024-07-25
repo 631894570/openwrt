@@ -60,7 +60,7 @@ jobs:
         remove-docker-images: 'true'
           
     - name: 检查Actions
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     
     - name: 检查服务器配置
       run: |
@@ -184,7 +184,7 @@ jobs:
         artifacts: ${{ env.FIRMWARE }}/*
 
     - name: 移除releases旧固件
-      uses: dev-drprasad/delete-older-releases@v0.2.1
+      uses: dev-drprasad/delete-older-releases@v0.3.4
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 1
