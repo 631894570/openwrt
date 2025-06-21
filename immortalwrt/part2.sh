@@ -21,9 +21,9 @@ sed -i '3d' package/base-files/files/etc/profile
 sed -i '3i\\[ -f \/etc\/banner \] && cat \/etc\/banner | lolcat' package/base-files/files/etc/profile
 sed -i 's/ash/bash/g' package/base-files/files/etc/passwd
 #修改默认IP
-sed -i 's/192.168.1.1/192.168.10.10/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 #默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci-light/Makefile
 #sed -i 's/luci-theme-bootstrap/luci-theme-design/g' feeds/luci/collections/luci/Makefile
 
-rm -rf feeds/luci/applications/luci-app-homeproxy
+#rm -rf feeds/luci/applications/luci-app-homeproxy
